@@ -1,0 +1,34 @@
+package ex_14;
+
+import java.util.Arrays;
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Digite as palavras que deseja comparar separadas por um espaço: ");
+		String[] palavrasArr = sc.nextLine().toUpperCase().split(" ");
+		
+		System.out.println(Arrays.toString(palavrasArr));
+		
+		for (int i=0 ; i<palavrasArr.length; i++) {
+			char[] palavraAtual = palavrasArr[i].toCharArray();
+			Arrays.sort(palavraAtual);
+			for (int j=i+1; j<palavrasArr.length; j++) {
+				char[] palavraComp = palavrasArr[j].toCharArray();
+				Arrays.sort(palavraComp);
+				System.out.println(palavraComp);
+				System.out.println(palavraComp.equals(palavraAtual));
+			}
+		}
+		
+		sc.close();
+
+	}
+
+}

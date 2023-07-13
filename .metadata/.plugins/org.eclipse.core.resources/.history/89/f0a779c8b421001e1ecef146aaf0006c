@@ -1,0 +1,36 @@
+package ex_06;
+
+import java.util.Arrays;
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Main {
+
+	/*Desafio 6: Verificar Anagrama Crie um programa em Java que verifique se duas
+palavras são anagramas. Ou seja, se as palavras possuem as mesmas letras, mas
+em ordem diferente.*/
+	
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		String p1, p2;
+		
+		System.out.println("Digite as duas palavras para saber se são anagramas: ");
+		p1 = sc.next().toUpperCase();
+		p2 = sc.next().toUpperCase();
+		
+		char[] p1Arr = p1.toCharArray();
+		char[] p2Arr = p2.toCharArray();
+		
+		if (Arrays.equals(p1Arr, p2Arr)) {
+			System.out.println("São anagramas");
+		} else {
+			System.out.println("NÃO são anagramas");
+		}
+		
+		sc.close();
+
+	}
+
+}
