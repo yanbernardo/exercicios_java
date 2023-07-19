@@ -1,0 +1,74 @@
+package java_POO;
+
+public class Veiculo {
+	
+	private String marca;
+	private String modelo;
+	private int ano;
+	private String status = "desligado";
+	
+	public Veiculo(String marca, String modelo, int ano) {
+		this.marca = marca;
+		this.modelo = modelo;
+		this.ano = ano;
+	}
+	
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+	
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+	
+	public void setAno(int ano) {
+		this.ano = ano;
+	}
+	
+	public String getMarca() {
+	return marca;
+	}
+	
+	public String getModelo() {
+	return modelo;
+	}
+	
+	public int getAno(){
+	return ano;
+	}
+	
+	public void acelerar(){
+		if (this.status != "desligado") {
+			System.out.println("O veículo está acelerando.");
+		} else {
+			System.out.println("Não é possível acelerar um carro desligado!");
+		}
+	}
+	
+	public void frear() {
+		if (this.status != "desligado") {
+			System.out.println("O veículo está freando!");
+		} else {
+			System.out.println("Não é possível frear um carro desligado!");
+		}
+	}
+	
+	public void ligar() {
+		if (this.status == "desligado") {
+			this.status = "ligado";
+			System.out.println("O veículo foi ligado!");
+		} else {
+			System.out.println("Não foi possível ligar, o carro já está ligado!");
+		}
+	}
+
+	public static void main(String[] args) {
+		
+		Veiculo carro = new Veiculo("Volks", "Monza", 1993);
+		
+		carro.ligar();
+		carro.acelerar();
+		carro.frear();
+		
+	}
+}

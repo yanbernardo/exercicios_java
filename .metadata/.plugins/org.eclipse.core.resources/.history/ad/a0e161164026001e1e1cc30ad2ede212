@@ -1,0 +1,63 @@
+package java_POO;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Biblioteca {
+	
+	private List<Livro> livros = new ArrayList<>();
+	
+	public Biblioteca() {
+		
+	}
+	
+	public void cadastrarLivro(String titulo, String autor, Integer anoPublicacao) {
+		livros.add(new Livro(titulo, autor, anoPublicacao));
+	}
+	
+	public void listarLivros() {
+		for (Livro livro : livros) {
+			System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+			System.out.printf("Titulo: %s\n", livro.getTitulo());
+			System.out.printf("Escrito por: %s\n", livro.getAutor());
+			System.out.printf("Ano de publicação: %d\n", livro.getAnoPublicacao());
+		}
+	}
+	
+	public List<Livro> buscarLivroPorAutor(String autor) {
+		List<Livro> listaLivros = new ArrayList<>();
+		for (Livro livro : livros) {
+			if (livro.getAutor() == autor) {
+				listaLivros.add(livro);
+			}
+		}
+		
+		return listaLivros;
+	}
+
+	public static void main(String[] args) {
+		Biblioteca biblioteca = new Biblioteca();
+		
+		biblioteca.cadastrarLivro("O Morro dos Ventos Uivantes", "Emily Brontê", 1847);
+		biblioteca.cadastrarLivro("Grande Sertão Veredas", "João Guimarães Rosa", 1956);
+		biblioteca.cadastrarLivro("O Senhor das Moscas", "William Golding", 1954);
+		biblioteca.cadastrarLivro("A Hora dos Ruminantes", "José J. Veiga", 1966);
+		biblioteca.cadastrarLivro("O Burrinho Pedrês", "João Guimarães Rosa", 1946);
+		biblioteca.cadastrarLivro("Admirável Mundo Novo", "Aldous Huxley", 1932);
+		biblioteca.cadastrarLivro("1984", "George Orwell", 1949);
+		
+		biblioteca.listarLivros();
+		
+		List<Livro> listaLivros = biblioteca.buscarLivroPorAutor("João Guimarães Rosa");
+		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+		
+		System.out.println("Livros do autor João Guimarães Rosa disponíveis:");
+		for (Livro livro : listaLivros) {
+			System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+			System.out.printf("Titulo: %s\n", livro.getTitulo());
+			System.out.printf("Escrito por: %s\n", livro.getAutor());
+			System.out.printf("Ano de publicação: %d\n", livro.getAnoPublicacao());
+		}
+
+	}
+}
