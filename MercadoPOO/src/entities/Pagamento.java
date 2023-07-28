@@ -4,6 +4,9 @@ public class Pagamento {
 	private Integer meioPagamento;
 	private Carrinho compra;
 	
+	public Pagamento() {
+		
+	}
 	
 	public Pagamento(Integer meioPagamento, Carrinho compra) {
 		this.meioPagamento = meioPagamento;
@@ -43,4 +46,26 @@ public class Pagamento {
 		}
 		return null;
 	}
+	
+	
+	public Integer getMeioPagamento() {
+		return meioPagamento;
+	}
+
+
+	public void setMeioPagamento(Integer meioPagamento) {
+		this.meioPagamento = meioPagamento;
+	}
+
+
+	public Carrinho getCompra() {
+		return compra;
+	}
+
+
+	public void setCompra(Carrinho compra) {
+		this.compra = compra;
+	}
+
+
 }

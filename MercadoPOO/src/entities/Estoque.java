@@ -35,7 +35,7 @@ public class Estoque {
 		for (int i=0; i<listaEstoque.size(); i++) {
 			if (i % 2 == 0) {
 				if (((Produto) listaEstoque.get(i)).getIdProduto() == produto.getIdProduto()) {
-					if((int)listaEstoque.get(i+1) >= quantity) {
+					if((int)listaEstoque.get(i+1) >= quantity && quantity > 0) {
 						listaEstoque.set(i+1, (int)listaEstoque.get(i+1) - quantity);
 						return true;
 					}
